@@ -7,7 +7,7 @@ print:
 
 .loop:
     lodsb
-    cmp al, 0x00
+    cmp al, 0x0
     je short .loop_exit
     int 0x10
     jmp short .loop

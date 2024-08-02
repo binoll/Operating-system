@@ -3,7 +3,7 @@
 
 ; null segment descriptor
 gdt_start:
-    dq 0x00000000
+    dq 0x0
 
 ; code segment descriptor
 gdt_code:

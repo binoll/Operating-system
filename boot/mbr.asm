@@ -21,11 +21,16 @@ call setup
 
 
 ; Variables
-STACK_START         equ 0x7BFF
-STACK_END           equ 0x0500
-boot_drive          db  0x00
-str_memory_error    db  "Memory error! The OS cannot be loaded!", 0x00
+STACK_START     equ 0x7BFF
+STACK_END       equ 0x500
+boot_drive      db  0x0
+mem_check       db  "Checking the memory...", 0xA, 0x0
+mem_fail        db  "Failed to check the memory!", 0xA, 0x0
+mem_succ        db  "Memory checked successfully!", 0xA, 0x0
+kern_load       db  "Initializing kernel...",  0xA, 0x0
+kern_succ       db  "Kernel loaded successfully!", 0xA, 0x0
+kern_fail       db  "Kernel failed to load!", 0xA, 0x0
 
 ; Signature
-times 510 - ($ - $$) db 0x00
+times 510 - ($ - $$) db 0x0
 dw 0xAA55
